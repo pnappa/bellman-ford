@@ -195,7 +195,7 @@ int main(int argc, char *argv[]) {
 
   auto end = hrclock::now();
 
-  std::cout << "loading graph took " << MICROGET(end - start) << "ms"
+  std::cout << "loading graph took " << MICROGET(end - start) << "us"
             << std::endl;
 
   start = hrclock::now();
@@ -205,13 +205,13 @@ int main(int argc, char *argv[]) {
 
   end = hrclock::now();
 
-  std::cout << "bellman-ford took " << MICROGET(end - start) << "ms"
+  std::cout << "bellman-ford took " << MICROGET(end - start) << "us"
             << std::endl;
 
   start = hrclock::now();
   dump_distances(outfile, distance_list);
   dump_paths("paths.txt", fastest_paths);
   end = hrclock::now();
-  std::cout << "writing paths/costs took " << MICROGET(end - start) << "ms"
+  std::cout << "writing paths/costs took " << MICROGET(end - start) << "us"
             << std::endl;
 }
